@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Dict
 
 
@@ -9,7 +11,7 @@ class Shop:
         self.items: Dict[str, int] = {}
 
     @classmethod
-    def small_shop(cls, name: str, type: str):
+    def small_shop(cls, name: str, type: str) -> Shop:
         return cls(name, type, 10)
 
     def add_item(self, item_name: str) -> str:
@@ -38,5 +40,5 @@ class Shop:
 
         return f'{amount} {item_name} removed from the shop'
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'{self.name} of type {self.type} with capacity {self.capacity}'
